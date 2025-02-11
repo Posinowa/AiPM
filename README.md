@@ -1,35 +1,35 @@
-# AI TaskMaster
+# AIssign
 
-## 🚀 Yapay Zeka Destekli Proje ve Görev Yönetim Platformu
+## 🚀 AI-Powered Project and Task Management Platform
 
-**AI TaskMaster**, yapay zeka destekli bir proje yönetim platformudur. Kullanıcıların yeteneklerini analiz ederek onlara en uygun projeleri atar ve projeleri yapay zeka ile görev parçalara bölerek, yöneticilerin daha verimli bir süreç yürütmesini sağlar.
+**AIssign** is an AI-powered project management platform that analyzes users' skills, assigns them to the most suitable projects, and divides projects into tasks with AI, making it easier for administrators to manage processes efficiently.
 
-Admin, kullanıcılar için bir soru havuzu oluşturur. Kullanıcılar kayıt olduktan sonra bu soruları yanıtlar ve arka planda çalışan AI, kullanıcının seviyesini belirler. Admin, AI'nin analizine dayanarak en uygun projeyi seçer. Yapay zeka, projeyi görev aşamalarına böler ve kullanıcıya atamalar yapar.
+Admins create a question pool for users. Once users sign up, they answer these questions, and an AI model running in the background determines their proficiency level. The admin selects the most appropriate project based on the AI's analysis. AI then breaks the project into tasks and assigns them to the user.
 
-## 📌 Özellikler
+## 📌 Features
 
-✅ Kullanıcılar **kayıt olabilir** ve **giriş yapabilir**  
-✅ Kullanıcılar **adminin oluşturduğu soruları** yanıtlar ve AI analiz yapar  
-✅ **Admin**, **yapay zeka destekli analizden** faydalanarak kullanıcılara proje atayabilir  
-✅ **AI, projeyi detaylı görev adımlarına** ayırarak kullanıcıya atamalar yapar  
-✅ **Admin için proje ve soru yönetim panelleri** bulunmaktadır  
-✅ **Görev yönetimi** ve **ilerleme takibi** sistemleri entegre edilmiştir  
+✅ Users can **sign up** and **log in**  
+✅ Users **answer admin-generated questions**, and AI performs an analysis  
+✅ **Admins can assign projects** based on AI-driven insights  
+✅ **AI segments projects into detailed task steps** and assigns them to users  
+✅ **Admin panels for project and question management**  
+✅ **Task management and progress tracking** systems are integrated  
 
-🔄 **Gelecekteki Güncellemeler**  
-- Daha **optimize AI analizleri**  
-- Projelerin **daha küçük görevler halinde** ayrılması  
-- **Görev bildirim sisteminin** eklenmesi  
-- **Kullanıcı arayüzünün** iyileştirilmesi  
+🔄 **Future Enhancements**  
+- More **optimized AI analyses**  
+- Projects **broken down into smaller task units**  
+- **Task notification system** implementation  
+- **Improved user interface**  
 
-## 🏗️ Mimari Yapı
+## 🏗️ Architecture
 
-**Bu proje aşağıdaki yazılım geliştirme standartlarına uygun olarak geliştirilmiştir:**
-- **SOLID Prensipleri**
+**This project follows the following software development principles:**
+- **SOLID Principles**
 - **Feature-Based Architecture**
 - **Clean Code**
 - **Layered Architecture (Data - Domain - Presentation)**
 
-📂 **Dosya Yapısı**
+📂 **File Structure **
 
 ```
 /ai_taskmaster
@@ -102,22 +102,22 @@ Admin, kullanıcılar için bir soru havuzu oluşturur. Kullanıcılar kayıt ol
 
 ---
 
-## 📦 Kurulum
+## 📦 Installation
 
-Projeyi klonlayın:
+Clone the project:
 
 ```bash
-git clone https://github.com/senin-repon/ai_taskmaster.git
-cd ai_taskmaster
+git clone https://github.com/Posinowa/AiPM.git
+cd AiPM
 ```
 
-Bağımlılıkları yükleyin:
+Install dependencies:
 
 ```bash
 flutter pub get
 ```
 
-Projeyi çalıştırın:
+Run the project:
 
 ```bash
 flutter run
@@ -125,32 +125,32 @@ flutter run
 
 ---
 
-## 🛠 Kullanılan Teknolojiler
+## 🛠 Technologies Used
 
 - **Flutter** (Dart)  
 - **Firebase** (Auth, Firestore, Storage)  
-- **REST API** (Backend servisi için)  
+- **REST API** (Backend services)  
 - **Provider** (State Management)  
 
 ---
 
-## 🏆 Katkıda Bulunmak
+## 🏆 Contributing
 
-Bu proje **açık kaynaklıdır** ve katkılara açıktır!  
-Katkıda bulunmak için:
+This project is **open-source** and welcomes contributions!  
+To contribute:
 
-1. **Fork** edin 🍴  
-2. Yeni bir **branch** açın 🔥  
-3. Kodunuzu yazıp **commit** edin ✅  
-4. **Pull Request** gönderin 🚀  
+1. **Fork the repository** 🍴  
+2. Create a **new branch** 🔥  
+3. Write your code and **commit** ✅  
+4. Submit a **Pull Request** 🚀  
 
-**Eğer bir hata fark ederseniz veya yeni bir özellik önermek istiyorsanız, lütfen bir [issue](https://github.com/Posinowa/AiPM/issues) oluşturun!** 😊  
+**If you find a bug or want to suggest a new feature, please create an [issue](https://github.com/Posinowa/AiPM/issues)!** 😊  
 
 ---
 
-## 📞 İletişim
+## 📞 Contact
 
-Eğer proje ile ilgili sorularınız varsa, bana **[buradan ulaşabilirsiniz](mailto:posinowa.com)**!  
+For any inquiries regarding the project, feel free to **[contact me](posinowa.com)**!  
 
-Teşekkürler! ❤️
+Thank you! ❤️
 
