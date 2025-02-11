@@ -29,10 +29,10 @@ Admins create a question pool for users. Once users sign up, they answer these q
 - **Clean Code**
 - **Layered Architecture (Data - Domain - Presentation)**
 
-📂 **File Structure **
+📂 **File Structure**
 
 ```
-/ai_taskmaster
+/aissign
 │── /lib
 │   │── /core
 │   │   │── /common
@@ -107,8 +107,8 @@ Admins create a question pool for users. Once users sign up, they answer these q
 Clone the project:
 
 ```bash
-git clone https://github.com/Posinowa/AiPM.git
-cd AiPM
+git clone https://github.com/Posinowa/AIssign.git
+cd AIssign
 ```
 
 Install dependencies:
@@ -150,7 +150,7 @@ To contribute:
 
 ## 📞 Contact
 
-For any inquiries regarding the project, feel free to **[contact me](posinowa.com)**!  
+For any inquiries regarding the project, feel free to  **[contact us](https://posinowa.com)**!  
 
 Thank you! ❤️
 
