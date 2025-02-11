@@ -36,7 +36,7 @@ Admins create a question pool for users. Once users sign up, they answer these q
 │── /lib
 │   │── /core
 │   │   │── /common
-│   │   │   ├── app_colors.dart
+│   │   │   ├──
 │   │   │   ├── app_strings.dart
 │   │   │   ├── app_constants.dart
 │   │   │   ├── app_theme.dart
