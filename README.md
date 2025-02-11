@@ -1,3 +1,3 @@
 # aipm
 
-A new Flutter project.
+Ai Project Manager
