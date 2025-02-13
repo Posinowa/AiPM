@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                   ),
                   MaterialButton(
-                    child: Text("Şifremi Unuttum"),
+                    child: const Text("Şifremi Unuttum"),
                     onPressed: () {},
                   ),
                 ],
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                 ),
               ),
             ],
