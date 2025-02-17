@@ -74,7 +74,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10.0),
               ElevatedButton(
-                child: const Text("Giriş Yap"),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
