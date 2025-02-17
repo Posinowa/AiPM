@@ -136,7 +136,7 @@ class HomePage extends StatelessWidget {
                       ),
                       const SizedBox(height: 50),
                       const Text(
-                        "Continue with social media",
+                        "dia",
                         style: TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 30),
