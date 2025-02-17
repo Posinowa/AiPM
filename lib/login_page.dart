@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -63,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   MaterialButton(
-                    child: Text("Üye ol"),
+                    child: const Text("Üye ol"),
                     onPressed: () {},
                   ),
                   MaterialButton(
@@ -74,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10.0),
               ElevatedButton(
+                child: const Text("Giriş Yap"),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
