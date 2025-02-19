@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "78700636267",
+    "project_id": "aissign",
+    "storage_bucket": "aissign.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78700636267:android:beafdecacfc87673a4292e",
+        "android_client_info": {
+          "package_name": "com.example.aipm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJQPev3PqzSYIlQGzrFraw5_qqHs6me-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
