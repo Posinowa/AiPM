@@ -1,20 +1,54 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-      const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomePage(),
-      ),
-    );
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Future<void> registerUser() async {
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+
+      // Kullanıcı başarıyla kayıt olduysa yönlendir
+      if (userCredential.user != null) {
+        Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
+          context,
+          MaterialPageRoute(builder: (context) => const MainScreen()),
+        );
+      }
+    } on FirebaseAuthException catch (e) {
+      // Hata mesajını göster
+      String message = "Bir hata oluştu";
+      if (e.code == 'email-already-in-use') {
+        message = "Bu e-posta zaten kullanılıyor.";
+      } else if (e.code == 'invalid-email') {
+        message = "Geçersiz e-posta adresi.";
+      }
+
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        // Burada SingleChildScrollView ekliyoruz
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -84,9 +118,10 @@ class HomePage extends StatelessWidget {
                                       BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Email or Username",
+                              child: TextField(
+                                controller: emailController,
+                                decoration: const InputDecoration(
+                                  hintText: "Email",
                                   hintStyle: TextStyle(color: Colors.grey),
                                   border: InputBorder.none,
                                 ),
@@ -100,9 +135,10 @@ class HomePage extends StatelessWidget {
                                       BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: const TextField(
+                              child: TextField(
+                                controller: passwordController,
                                 obscureText: true,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(color: Colors.grey),
                                   border: InputBorder.none,
@@ -113,13 +149,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 40),
-                      const Text(
-                        "",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      const SizedBox(height: 40),
                       MaterialButton(
-                        onPressed: () {},
+                        onPressed: registerUser,
                         height: 50,
                         color: const Color.fromARGB(255, 27, 0, 230),
                         shape: RoundedRectangleBorder(
@@ -134,12 +165,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 30),
-                      const Row(
-                        children: <Widget>[
-                          SizedBox(width: 30),
-                        ],
-                      ),
+                      const SizedBox(height: 50),
                     ],
                   ),
                 ),
@@ -147,6 +173,22 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Main Screen'),
+      ),
+      body: const Center(
+        child: Text('Welcome to the Main Screen!'),
       ),
     );
   }
