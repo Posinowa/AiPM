@@ -1,3 +1,4 @@
+import 'package:aipm/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -67,7 +68,13 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   MaterialButton(
                     child: const Text("Üye ol"),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                    },
                   ),
                   MaterialButton(
                     child: const Text("Şifremi Unuttum"),

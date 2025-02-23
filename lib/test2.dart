@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() => runApp(
       const MaterialApp(
@@ -7,16 +8,13 @@ void main() => runApp(
       ),
     );
 
-
-
- class HomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        // Burada SingleChildScrollView ekliyoruz
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -115,11 +113,6 @@ void main() => runApp(
                         ),
                       ),
                       const SizedBox(height: 40),
-                      const Text(
-                        "",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      const SizedBox(height: 40),
                       MaterialButton(
                         onPressed: () {},
                         height: 50,
@@ -135,11 +128,6 @@ void main() => runApp(
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 50),
-                      const Text(
-                        "dia",
-                        style: TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 30),
                       const Row(
