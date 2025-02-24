@@ -1,9 +1,13 @@
+import 'package:aipm/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginPageState createState() => _LoginPageState();
 }
 
@@ -66,7 +70,13 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   MaterialButton(
                     child: const Text("Üye ol"),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                    },
                   ),
                   MaterialButton(
                     child: const Text("Şifremi Unuttum"),
@@ -76,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10.0),
               ElevatedButton(
+                // ignore: sort_child_properties_last
                 child: const Text("Giriş Yap"),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {

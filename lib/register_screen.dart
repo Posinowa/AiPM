@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-
-void main() => runApp(
-      const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomePage(),
-      ),
-    );
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       body: SingleChildScrollView(
-        // Burada SingleChildScrollView ekliyoruz
         child: Container(
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -84,7 +80,8 @@ class HomePage extends StatelessWidget {
                                       BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: const TextField(
+                              child: TextField(
+                                controller: emailController,
                                 decoration: InputDecoration(
                                   hintText: "Email or Username",
                                   hintStyle: TextStyle(color: Colors.grey),
@@ -100,7 +97,8 @@ class HomePage extends StatelessWidget {
                                       BorderSide(color: Colors.grey.shade200),
                                 ),
                               ),
-                              child: const TextField(
+                              child: TextField(
+                                controller: passwordController,
                                 obscureText: true,
                                 decoration: InputDecoration(
                                   hintText: "Password",
@@ -113,13 +111,32 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 40),
-                      const Text(
-                        "",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      const SizedBox(height: 40),
                       MaterialButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          String email = emailController.text;
+                          String password = passwordController.text;
+
+                          try {
+                            await FirebaseAuth.instance
+                                .createUserWithEmailAndPassword(
+                              email: email,
+                              password: password,
+                            );
+                            // Kayıt başarılı, MainApp sayfasına yönlendir
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MainApp()),
+                            );
+                          } on FirebaseAuthException catch (e) {
+                            // Hata durumunda
+                            print("Kayıt hatası: $e");
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                  content: Text("Kayıt hatası: ${e.message}")),
+                            );
+                          }
+                        },
                         height: 50,
                         color: const Color.fromARGB(255, 27, 0, 230),
                         shape: RoundedRectangleBorder(
@@ -134,17 +151,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 50),
-                      const Text(
-                        "dia",
-                        style: TextStyle(color: Colors.grey),
-                      ),
                       const SizedBox(height: 30),
-                      const Row(
-                        children: <Widget>[
-                          SizedBox(width: 30),
-                        ],
-                      ),
                     ],
                   ),
                 ),
@@ -152,6 +159,19 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Welcome to MainApp!'),
       ),
     );
   }
