@@ -1,5 +1,7 @@
 import 'package:aipm/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -84,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10.0),
               ElevatedButton(
+                // ignore: sort_child_properties_last
                 child: const Text("Giriş Yap"),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
